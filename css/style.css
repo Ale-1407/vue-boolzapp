@@ -1,3 +1,5 @@
+/* LAYOUT */
+
 body {
     background: rgb(0, 168, 132);
     background: linear-gradient(
@@ -13,4 +15,65 @@ body {
     height: 90%;
     margin: auto;
     margin-top: 5vh;
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.color{
+    background-color: #e3e1e1;
+}
+
+.text-grey{
+    color: #b1b1b1;
+}
+
+/* SIDEBAR / CHAT */
+.sidebar{
+    width: 30%;
+}
+
+.profile{
+    height: 10%;
+}
+
+.img img{
+    height: 50px;
+}
+
+.img-text{
+    align-self: center;
+}
+
+.pic{
+    background-image: url(../img/avatar_io.jpg);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-size: contain;
+}
+
+.attiva-notifiche{
+    height: 10%;
+    background-color: #8edafc;
+}
+
+.cerca-chat{
+    height: 7%;
+}
+
+.chat{
+    height: 73%;
+}
+
+/* MAIN / COONVERSAZIONI */
+.main{
+    width: 70%;
+}
+
+.main-mex{
+    height: 80%;
+}
+
+.text-mex{
+    height: 10%;
 }
