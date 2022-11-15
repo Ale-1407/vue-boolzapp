@@ -1,0 +1,16 @@
+body {
+    background: rgb(0, 168, 132);
+    background: linear-gradient(
+      0deg,
+      #d3dbdb 5%,
+      rgb(236, 229, 221) 85%,
+      rgb(18, 140, 126) 10%
+    );
+    overflow: hidden; /* Hide scrollbars */
+  }
+
+.container{
+    height: 90%;
+    margin: auto;
+    margin-top: 5vh;
+}
