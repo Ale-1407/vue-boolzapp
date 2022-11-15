@@ -17,9 +17,9 @@
         <div class="container d-flex bg-light">
 
         <!-- SIDEBAR -->
-          <div class="sidebar border border-dark">
+          <div class="sidebar border border-top-0 border-start-0 border-bottom-0 border-secondary  ">
             <!-- SEZIONE PROFILO -->
-            <div class="profile color border border-dark d-flex justify-content-between">
+            <div class="profile color d-flex justify-content-between">
                 <div class="img my-auto d-flex">
                     <div class="pic ms-2"></div>
                     <div class="img-text">
@@ -33,29 +33,53 @@
                 </div>
             </div>
             <!-- SEZIONE NOTIFICHE -->
-            <div class="attiva-notifiche border border-dark">
-
+            <div class="attiva-notifiche d-flex">
+                <div class="bell my-auto ms-2">
+                    <i class="fa-solid fa-bell-slash"></i>
+                </div>
+                <div class="img-text-2 my-auto ms-2">
+                    <span>Ricevi notifiche di nuovi messaggi</span>
+                    <span><a href="#">Attiva notifiche desktop</a></span>
+                </div>
             </div>
             <!-- SEZIONE CERCA O INIZIA NUOVA CHAT -->
-            <div class="cerca-chat border border-dark">
-
+            <div class="cerca-chat">
+                <nav class="navbar bg-light">
+                    <form class="container-fluid">
+                      <div class="input-group">
+                        <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass p-2 fs-lent text-grey"></i></span>
+                        <input type="text" class="form-control " placeholder="Cerca o inizia una nuova chat" aria-label="Username" aria-describedby="basic-addon1">
+                      </div>
+                    </form>
+                  </nav>
             </div>
             <!-- CHAT -->
-            <div class="chat border border-dark">
+            <div class="chat">
 
             </div>
           </div>
 
           <!-- MAIN -->
-          <div class="main border border-dark">
-            <div class="profile color border border-dark">
+          <div class="main">
+            <div class="profile color d-flex justify-content-between">
+                <div class="img my-auto d-flex">
+                    <div class="pic-2 ms-2"></div>
+                    <div class="img-text">
+                        <span class="fw-semibold ms-2">Michele</span>
+                        <span class="ms-2">Ultimo accesso oggi alle 12:00 </span>
+                    </div> 
+                </div>
+                <div class="icons my-auto me-2">
+                    <i class="fa-solid fa-magnifying-glass  fs-5 p-2 text-grey"></i>
+                    <i class="fa-solid fa-paperclip  fs-5 p-2 text-grey"></i>
+                    <i class="fa-solid fa-ellipsis-vertical fs-5 p-2 text-grey"></i>
+                </div>
+            </div>
+            <div class="main-mex">
+
 
             </div>
-            <div class="main-mex border border-dark">
-
-
-            </div>
-            <div class="text-mex color border border-dark">
+            <div class="text-mex color">
 
             </div>
           </div>
