@@ -17,7 +17,7 @@
         <div class="container d-flex bg-light" id="app">
 
         <!-- SIDEBAR -->
-          <div class="sidebar border border-top-0 border-start-0 border-bottom-0 border-secondary  ">
+          <div class="sidebar border border-top-0 border-start-0 border-bottom-0  ">
             <!-- SEZIONE PROFILO -->
             <div class="profile color d-flex justify-content-between">
                 <div class="img my-auto d-flex">
@@ -45,7 +45,7 @@
                 </div>
             </div>
             <!-- SEZIONE CERCA O INIZIA NUOVA CHAT -->
-            <div class="cerca-chat mb-2">
+            <div class="cerca-chat mb-3">
                 <nav class="navbar bg-light">
                     <form class="container-fluid">
                       <div class="input-group">
@@ -58,38 +58,9 @@
             <!-- CHAT -->
             <div class="chat">
                 <ul class="list-group">
-                    <li class="list-group-item d-flex align-items-center">
-                        <img src="./img/avatar_1.jpg" alt="img-1" class="rounded-circle avatar-chat">
-                        <span class="fw-semibold ms-2">Michele</span>
-                        
-                    </li>
-                    <li class="list-group-item d-flex align-items-center">
-                        <img src="./img/avatar_2.jpg" alt="img-2" class="rounded-circle avatar-chat">
-                        <span class="fw-semibold ms-2">Fabio</span>
-                    </li>
-                    <li class="list-group-item d-flex align-items-center">
-                        <img src="./img/avatar_3.jpg" alt="img-3" class="rounded-circle avatar-chat">
-                        <span class="fw-semibold ms-2">Samuele</span>
-                    </li>
-                    <li class="list-group-item d-flex align-items-center">
-                        <img src="./img/avatar_4.jpg" alt="img-4" class="rounded-circle avatar-chat">
-                        <span class="fw-semibold ms-2">Alessandro B.</span>
-                    </li>
-                    <li class="list-group-item d-flex align-items-center">
-                        <img src="./img/avatar_5.jpg" alt="img-5" class="rounded-circle avatar-chat">
-                        <span class="fw-semibold ms-2">Alessandro L.</span>
-                    </li>
-                    <li class="list-group-item">
-                        <img src="./img/avatar_6.jpg" alt="img-6" class="rounded-circle avatar-chat">
-                        <span class="fw-semibold ms-2">Claudia</span>
-                    </li>
-                    <li class="list-group-item d-flex align-items-center">
-                        <img src="./img/avatar_7.jpg" alt="img-7" class="rounded-circle avatar-chat">
-                        <span class="fw-semibold ms-2">Davide</span>
-                    </li>
-                    <li class="list-group-item d-flex align-items-center">
-                        <img src="./img/avatar_8.jpg" alt="img-8" class="rounded-circle avatar-chat">
-                        <span class="fw-semibold ms-2">Federico</span>
+                    <li class="list-group-item d-flex align-items-center" v-for="( elem, index ) in contatti" :key="index">
+                        <img :src="contatti[index].img" alt="img" class="rounded-circle avatar-chat">
+                        <span class="ps-2">{{ elem.name }}</span>
                     </li>
                 </ul>
             </div>
