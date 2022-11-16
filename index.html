@@ -14,14 +14,16 @@
 </head>
 <body>
     <div class="contenitore vh-100 ">
-        <div class="container d-flex bg-light">
+        <div class="container d-flex bg-light" id="app">
 
         <!-- SIDEBAR -->
           <div class="sidebar border border-top-0 border-start-0 border-bottom-0 border-secondary  ">
             <!-- SEZIONE PROFILO -->
             <div class="profile color d-flex justify-content-between">
                 <div class="img my-auto d-flex">
-                    <div class="pic ms-2"></div>
+                    <div class="pic ms-2">
+                        <img src="./img/avatar_io.jpg" alt="img-io" class="rounded-circle">
+                    </div>
                     <div class="img-text">
                         <span class="fw-semibold ms-2">Sofia</span>
                     </div> 
@@ -35,7 +37,7 @@
             <!-- SEZIONE NOTIFICHE -->
             <div class="attiva-notifiche d-flex">
                 <div class="bell my-auto ms-2">
-                    <i class="fa-solid fa-bell-slash"></i>
+                    <i class="fa-solid fa-bell-slash bg-white"></i>
                 </div>
                 <div class="img-text-2 my-auto ms-2">
                     <span>Ricevi notifiche di nuovi messaggi</span>
@@ -54,16 +56,53 @@
                   </nav>
             </div>
             <!-- CHAT -->
-            <div class="chat">
-
+            <div class="chat pt-3">
+                <ul class="list-group">
+                    <li class="list-group-item d-flex align-items-center">
+                        <img src="./img/avatar_1.jpg" alt="img-1" class="rounded-circle avatar-chat">
+                        <span class="fw-semibold ms-2">Michele</span>
+                        
+                    </li>
+                    <li class="list-group-item d-flex align-items-center">
+                        <img src="./img/avatar_2.jpg" alt="img-2" class="rounded-circle avatar-chat">
+                        <span class="fw-semibold ms-2">Fabio</span>
+                    </li>
+                    <li class="list-group-item d-flex align-items-center">
+                        <img src="./img/avatar_3.jpg" alt="img-3" class="rounded-circle avatar-chat">
+                        <span class="fw-semibold ms-2">Samuele</span>
+                    </li>
+                    <li class="list-group-item d-flex align-items-center">
+                        <img src="./img/avatar_4.jpg" alt="img-4" class="rounded-circle avatar-chat">
+                        <span class="fw-semibold ms-2">Alessandro B.</span>
+                    </li>
+                    <li class="list-group-item d-flex align-items-center">
+                        <img src="./img/avatar_5.jpg" alt="img-5" class="rounded-circle avatar-chat">
+                        <span class="fw-semibold ms-2">Alessandro L.</span>
+                    </li>
+                    <li class="list-group-item">
+                        <img src="./img/avatar_6.jpg" alt="img-6" class="rounded-circle avatar-chat">
+                        <span class="fw-semibold ms-2">Claudia</span>
+                    </li>
+                    <li class="list-group-item d-flex align-items-center">
+                        <img src="./img/avatar_7.jpg" alt="img-7" class="rounded-circle avatar-chat">
+                        <span class="fw-semibold ms-2">Davide</span>
+                    </li>
+                    <li class="list-group-item d-flex align-items-center">
+                        <img src="./img/avatar_8.jpg" alt="img-8" class="rounded-circle avatar-chat">
+                        <span class="fw-semibold ms-2">Federico</span>
+                    </li>
+                </ul>
             </div>
           </div>
 
           <!-- MAIN -->
           <div class="main">
+            <!-- SEZIONE PROFILO MAIN -->
             <div class="profile color d-flex justify-content-between">
                 <div class="img my-auto d-flex">
-                    <div class="pic-2 ms-2"></div>
+                    <div class="pic-2 ms-2">
+                        <img src="./img/avatar_1.jpg" alt="img-1" class="rounded-circle">
+                    </div>
                     <div class="img-text">
                         <span class="fw-semibold ms-2">Michele</span>
                         <span class="ms-2">Ultimo accesso oggi alle 12:00 </span>
@@ -75,12 +114,26 @@
                     <i class="fa-solid fa-ellipsis-vertical fs-5 p-2 text-grey"></i>
                 </div>
             </div>
-            <div class="main-mex">
-
-
+            <!-- SEZIONE MESSAGGI CHAT -->
+            <div class="main-mex flex-grow-1 p-3 d-flex flex-column">
+                <div class=" mex sent-mex">
+                    <p class="mb-0">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                </div>
+                <div class="mex received-mex">
+                    <p class="mb-0">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                </div>
             </div>
-            <div class="text-mex color">
-
+            <!-- SEZIONE SCRIVI MESSAGGIO -->
+            <div class="text-mex color ">
+                <nav class="navbar ">
+                    <form class="container-fluid">
+                      <div class="input-group">
+                        <span class="input-group-text" id="basic-addon1"><i class="fa-regular fa-face-smile p-2"></i></span>
+                        <input type="text" class="form-control border border-0 rounded-2" placeholder="Scrivi un messaggio" aria-label="Username" aria-describedby="basic-addon1">
+                        <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-microphone p-2"></i></span>
+                      </div>
+                    </form>
+                  </nav>
             </div>
           </div>
         </div>
