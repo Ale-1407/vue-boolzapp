@@ -1,0 +1,136 @@
+/* LAYOUT */
+
+body {
+    background: rgb(0, 168, 132);
+    background: linear-gradient(
+      0deg,
+      #d3dbdb 5%,
+      rgb(236, 229, 221) 85%,
+      rgb(18, 140, 126) 10%
+    );
+    overflow: hidden; /* Hide scrollbars */
+  }
+
+.container{
+    height: 90%;
+    margin: auto;
+    margin-top: 5vh;
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.color{
+    background-color: #e9e9e9;
+}
+
+.text-grey{
+    color: #b1b1b1;
+}
+
+.fs-lent{
+    font-size: 15px;
+}
+/* SIDEBAR / CHAT */
+.sidebar{
+    width: 30%;
+}
+
+.profile{
+    height: 10%;
+}
+
+.img img{
+    height: 50px;
+}
+
+.img-text{
+    align-self: center;
+}
+
+
+.attiva-notifiche{
+    height: 10%;
+    background-color: #8edafc;
+}
+
+a{
+    color: grey;
+}
+.cerca-chat{
+    height: 7%;
+}
+
+.chat{
+    height: 73%;
+    overflow: auto;
+}
+
+.img-text-2 span:nth-child(2){
+    font-size: 12px;
+    display: block;
+}
+
+.bell{
+    border-radius: 50%;
+    background-color: white;
+    background-size: contain;
+    padding: 8px 10px;
+}
+
+.fa-bell-slash{
+    color: #8edafc;
+}
+
+.input-group-text-2{
+    border: 1px solid lightgrey;
+    background-color: white;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    
+}
+
+
+.avatar-chat{
+    width: 50px;
+}
+
+/* MAIN / COONVERSAZIONI */
+.main{
+    width: 70%;
+}
+
+
+.img-text span:nth-child(2){
+    font-size: 12px;
+    display: block;
+}
+
+.main-mex{
+    height: 83%;
+    background-image: url(../img/mine.jpg);
+}
+
+.text-mex{
+    height: 10%;
+}
+
+.input-group-text{
+    border: 0;
+    background-color: transparent;
+}
+
+.mex{
+    max-width: 50%;
+    border-radius: 10px;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+.sent-mex{
+    background-color: #d5f9ba;
+    align-self: flex-end;
+}
+
+.received-mex{
+    background-color: white;
+}
