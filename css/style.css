@@ -61,7 +61,7 @@ a{
 }
 
 .chat{
-    height: 73%;
+    height: 72%;
     overflow: auto;
 }
 
@@ -81,14 +81,14 @@ a{
     color: #8edafc;
 }
 
-.input-group-text{
+.input-group-text-2{
+    border: 1px solid lightgrey;
     background-color: white;
-    border-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    
 }
 
-.form-control{
-    border-radius: 0;
-}
 
 .avatar-chat{
     width: 50px;
