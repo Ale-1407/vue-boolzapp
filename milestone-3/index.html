@@ -45,7 +45,7 @@
                 </div>
             </div>
             <!-- SEZIONE CERCA O INIZIA NUOVA CHAT -->
-            <div class="cerca-chat mb-2">
+            <div class="cerca-chat mb-3">
                 <nav class="navbar bg-light">
                     <form class="container-fluid">
                       <div class="input-group">
@@ -58,7 +58,7 @@
             <!-- CHAT -->
             <div class="chat">
                 <ul class="list-group">
-                    <li class="list-group-item d-flex align-items-center" v-for="( elem, index ) in contacts" :key="index" v-if="contacts[index].visible == true" @click="apriChat(elem, index)">
+                    <li class="list-group-item d-flex align-items-center cursor" v-for="( elem, index ) in contacts" :key="index" v-if="contacts[index].visible == true" @click="apriChat(elem, index)">
                         <img :src="contacts[index].avatar" alt="img" class="rounded-circle avatar-chat">
                         <span class="ps-2">{{ contacts[index].name }}</span>
                     </li>
@@ -97,7 +97,8 @@
                     <form class="container-fluid">
                       <div class="input-group">
                         <span class="input-group-text" id="basic-addon1"><i class="fa-regular fa-face-smile p-2"></i></span>
-                        <input type="text" class="form-control border border-0 rounded-2" placeholder="Scrivi un messaggio" aria-label="Username" aria-describedby="basic-addon1" v-model="inputMessage" @keyup.enter="sentMessage()">
+                        <input type="text" class="form-control border border-0 rounded-2" placeholder="Scrivi un messaggio" aria-label="Username" aria-describedby="basic-addon1" 
+                         v-model="inputMessage" v-on:keyup.enter="submit">
                         <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-microphone p-2"></i></span>
                       </div>
                     </form>

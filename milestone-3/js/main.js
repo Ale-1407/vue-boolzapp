@@ -2,6 +2,7 @@ var app = new Vue({
     el: '#app',
     data: {
       indice: 0,
+      inputMessage: '',
       contacts: [
         {
         name: 'Michele',
@@ -179,7 +180,6 @@ var app = new Vue({
             status: 'sent'
           }
           )
-          
         }
       }
   })

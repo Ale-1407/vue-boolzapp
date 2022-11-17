@@ -30,6 +30,10 @@ body {
 .fs-lent{
     font-size: 15px;
 }
+
+.cursor{
+    cursor: pointer;
+}
 /* SIDEBAR / CHAT */
 .sidebar{
     width: 30%;
@@ -92,6 +96,10 @@ a{
 
 .avatar-chat{
     width: 50px;
+}
+
+.list-group li:hover{
+    background-color: rgb(177, 177, 177, 0.3);
 }
 
 /* MAIN / COONVERSAZIONI */
