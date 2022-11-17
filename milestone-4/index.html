@@ -49,8 +49,9 @@
                 <nav class="navbar bg-light">
                     <form class="container-fluid">
                       <div class="input-group">
-                        <span class="input-group-text-2" id="basic-addon1"><i class="fa-solid fa-magnifying-glass p-2 fs-lent text-grey"></i></span>
-                        <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="Username" aria-describedby="basic-addon1">
+                        <span class="input-group-text-2" id="basic-addon1"><i class="fa-solid fa-magnifying-glass p-2 fs-lent text-grey" @click="ricercaNomi"></i></span>
+                        <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="Username" aria-describedby="basic-addon1"
+                        v-model="inputSearch" @keyup="ricercaNomi">
                       </div>
                     </form>
                   </nav>
@@ -58,9 +59,12 @@
             <!-- CHAT -->
             <div class="chat">
                 <ul class="list-group">
-                    <li class="list-group-item d-flex align-items-center cursor" v-for="( elem, index ) in contacts" :key="index" v-if="contacts[index].visible == true" @click="apriChat(elem, index)">
+                    <li class="lista-chat list-group-item d-flex align-items-center cursor" v-for="( elem, index ) in contacts" :key="index" v-if="contacts[index].visible == true" @click="apriChat(elem, index)">
                         <img :src="contacts[index].avatar" alt="img" class="rounded-circle avatar-chat">
-                        <span class="ps-2">{{ contacts[index].name }}</span>
+                        <div class="d-flex flex-column">
+                            <span class="ps-2 fw-semibold">{{ contacts[index].name }}</span>
+                            <span class="ms-2 font">Ultimo messaggio inviato</span>
+                        </div>
                     </li>
                 </ul>
             </div>
