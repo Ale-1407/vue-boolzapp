@@ -58,9 +58,9 @@
             <!-- CHAT -->
             <div class="chat">
                 <ul class="list-group">
-                    <li class="list-group-item d-flex align-items-center" v-for="( elem, index ) in contatti" :key="index">
-                        <img :src="contatti[index].img" alt="img" class="rounded-circle avatar-chat">
-                        <span class="ps-2">{{ elem.name }}</span>
+                    <li class="list-group-item d-flex align-items-center" v-for="( elem, index ) in contacts" :key="index" v-if="contacts[index].visible == true">
+                        <img :src="contacts[index].avatar" alt="img" class="rounded-circle avatar-chat">
+                        <span class="ps-2">{{ contacts[index].name }}</span>
                     </li>
                 </ul>
             </div>
