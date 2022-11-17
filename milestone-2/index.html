@@ -25,7 +25,7 @@
                         <img src="./img/avatar_io.jpg" alt="img-io" class="rounded-circle">
                     </div>
                     <div class="img-text">
-                        <span class="fw-semibold ms-2">Sofia</span>
+                        <span class="fw-semibold ms-2">Alessia</span>
                     </div> 
                 </div>
                 <div class="icons my-auto me-2">
@@ -58,7 +58,7 @@
             <!-- CHAT -->
             <div class="chat">
                 <ul class="list-group">
-                    <li class="list-group-item d-flex align-items-center" v-for="( elem, index ) in contacts" :key="index" v-if="contacts[index].visible == true">
+                    <li class="list-group-item d-flex align-items-center" v-for="( elem, index ) in contacts" :key="index" v-if="contacts[index].visible == true" @click="apriChat(elem, index)">
                         <img :src="contacts[index].avatar" alt="img" class="rounded-circle avatar-chat">
                         <span class="ps-2">{{ contacts[index].name }}</span>
                     </li>
@@ -72,10 +72,10 @@
             <div class="profile color d-flex justify-content-between">
                 <div class="img my-auto d-flex">
                     <div class="pic-2 ms-2">
-                        <img src="./img/avatar_1.jpg" alt="img-1" class="rounded-circle">
+                        <img :src="contacts[indice].avatar" alt="img-1" class="rounded-circle">
                     </div>
                     <div class="img-text">
-                        <span class="fw-semibold ms-2">Michele</span>
+                        <span class="fw-semibold ms-2">{{ contacts[indice].name }}</span>
                         <span class="ms-2">Ultimo accesso oggi alle 12:00 </span>
                     </div> 
                 </div>
@@ -86,12 +86,9 @@
                 </div>
             </div>
             <!-- SEZIONE MESSAGGI CHAT -->
-            <div class="main-mex flex-grow-1 p-3 d-flex flex-column">
-                <div class=" mex sent-mex">
-                    <p class="mb-0">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                </div>
-                <div class="mex received-mex">
-                    <p class="mb-0">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+            <div class="main-mex p-3 d-flex flex-column">
+                <div v-for="(elem, index) in contacts[indice].messages" :class="(contacts[indice].messages[index].status == 'sent') ? 'sent-mex' : 'received-mex'">
+                    <div :class="(contacts[indice].messages[index].status == 'received') ? 'received-mex' : 'sent-mex'">{{contacts[indice].messages[index].message}}</div>
                 </div>
             </div>
             <!-- SEZIONE SCRIVI MESSAGGIO -->

@@ -1,6 +1,7 @@
 var app = new Vue({
   el: '#app',
   data: {
+    indice: 0,
     contacts: [
       {
       name: 'Michele',
@@ -125,7 +126,7 @@ var app = new Vue({
       ],
       },
       {
-      name: 'Federico',
+      name: 'Davide',
       avatar: '/milestone-2/img/avatar_7.jpg',
       visible: true,
       messages: [
@@ -142,7 +143,7 @@ var app = new Vue({
       ],
       },
       {
-      name: 'Davide',
+      name: 'Federico',
       avatar: '/milestone-2/img/avatar_8.jpg',
       visible: true,
       messages: [
@@ -164,5 +165,10 @@ var app = new Vue({
       ],
       }
       ]
+    },
+    methods: {
+      apriChat(elem, index){
+       return this.indice = index
+      }
     }
 })
