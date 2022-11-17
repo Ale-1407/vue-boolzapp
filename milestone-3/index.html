@@ -94,14 +94,14 @@
             <!-- SEZIONE SCRIVI MESSAGGIO -->
             <div class="text-mex color ">
                 <nav class="navbar ">
-                    <form class="container-fluid">
+                    <div class="container-fluid">
                       <div class="input-group">
                         <span class="input-group-text" id="basic-addon1"><i class="fa-regular fa-face-smile p-2"></i></span>
                         <input type="text" class="form-control border border-0 rounded-2" placeholder="Scrivi un messaggio" aria-label="Username" aria-describedby="basic-addon1" 
-                         v-model="inputMessage" v-on:keyup.enter="submit">
+                         v-model="inputMessage" @keyup.enter="sentMessage">
                         <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-microphone p-2"></i></span>
                       </div>
-                    </form>
+                    </div>
                   </nav>
             </div>
           </div>

@@ -176,8 +176,19 @@ var app = new Vue({
           getMessages.push(
             {
             date: '28/03/2020 16:15:22',
-            message: 'this.inputMessage',
+            message: this.inputMessage,
             status: 'sent'
+          }
+          )
+          setTimeout(this.Risposta, 1000)
+        },
+        Risposta(){
+          let getMessages = this.contacts[this.indice].messages
+          getMessages.push(
+            {
+            date: '28/03/2020 16:15:22',
+            message: 'ok',
+            status: 'received'
           }
           )
         }
