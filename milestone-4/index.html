@@ -63,7 +63,7 @@
                         <img :src="contacts[index].avatar" alt="img" class="rounded-circle avatar-chat">
                         <div class="d-flex flex-column">
                             <span class="ps-2 fw-semibold">{{ contacts[index].name }}</span>
-                            <span class="ms-2 font">Ultimo messaggio inviato</span>
+                            <span class="ms-2 font">{{ ultimoMex(index) }}</span>
                         </div>
                     </li>
                 </ul>

@@ -202,6 +202,11 @@ var app = new Vue({
                 return element.visible = false;
             }
         })
+        },
+        ultimoMex(index){
+          let lastMex = this.contacts[index].messages.length - 1;
+          console.log(lastMex)
+          return this.contacts[index].messages[lastMex].message
         }
       }
   })
