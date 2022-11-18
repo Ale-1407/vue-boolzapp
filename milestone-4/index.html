@@ -91,8 +91,11 @@
             </div>
             <!-- SEZIONE MESSAGGI CHAT -->
             <div class="main-mex p-3 d-flex flex-column">
-                <div v-for="(elem, index) in contacts[indice].messages" :class="(contacts[indice].messages[index].status == 'sent') ? 'sent-mex' : 'received-mex'">
-                    <div :class="(contacts[indice].messages[index].status == 'received') ? 'received-mex' : 'sent-mex'">{{contacts[indice].messages[index].message}}</div>
+                <div v-for="(elem, index) in contacts[indice].messages" class="mb-2" :class="(contacts[indice].messages[index].status == 'sent') ? 'sent-mex' : 'received-mex'">
+                    <div class="d-flex flex-column" :class="(contacts[indice].messages[index].status == 'received') ? 'received-mex' : 'sent-mex'">
+                        <span class="messaggi"> {{ contacts[indice].messages[index].message }} </span>
+                        <span class="time">{{contacts[indice].messages[index].date.slice(10, 16)}}</span>
+                    </div>
                 </div>
             </div>
             <!-- SEZIONE SCRIVI MESSAGGIO -->
