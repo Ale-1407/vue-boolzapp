@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boolzapp</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    
+    
+</head>
+<body>
+    <div class="contenitore vh-100 ">
+        <div class="container d-flex bg-light" id="app">
+
+        <!-- SIDEBAR -->
+          <div class="sidebar border border-top-0 border-start-0 border-bottom-0  ">
+            <!-- SEZIONE PROFILO -->
+            <div class="profile color d-flex justify-content-between">
+                <div class="img my-auto d-flex">
+                    <div class="pic ms-2">
+                        <img src="./img/avatar_io.jpg" alt="img-io" class="rounded-circle">
+                    </div>
+                    <div class="img-text">
+                        <span class="fw-semibold ms-2">Alessia</span>
+                    </div> 
+                </div>
+                <div class="icons my-auto me-2">
+                    <i class="fa-solid fa-circle-notch fs-5 p-2 text-grey"></i>
+                    <i class="fa-solid fa-message fs-5 p-2 text-grey"></i>
+                    <i class="fa-solid fa-ellipsis-vertical fs-5 p-2 text-grey"></i>
+                </div>
+            </div>
+            <!-- SEZIONE NOTIFICHE -->
+            <div class="attiva-notifiche d-flex">
+                <div class="bell my-auto ms-2">
+                    <i class="fa-solid fa-bell-slash bg-white"></i>
+                </div>
+                <div class="img-text-2 my-auto ms-2">
+                    <span>Ricevi notifiche di nuovi messaggi</span>
+                    <span><a href="#">Attiva notifiche desktop</a></span>
+                </div>
+            </div>
+            <!-- SEZIONE CERCA O INIZIA NUOVA CHAT -->
+            <div class="cerca-chat mb-3">
+                <nav class="navbar bg-light">
+                    <form class="container-fluid">
+                      <div class="input-group">
+                        <span class="input-group-text-2" id="basic-addon1"><i class="fa-solid fa-magnifying-glass p-2 fs-lent text-grey" @click="ricercaNomi"></i></span>
+                        <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="Username" aria-describedby="basic-addon1"
+                        v-model="inputSearch" @keyup="ricercaNomi">
+                      </div>
+                    </form>
+                  </nav>
+            </div>
+            <!-- CHAT -->
+            <div class="chat">
+                <ul class="list-group">
+                    <li class="lista-chat list-group-item d-flex align-items-center cursor" v-for="( elem, index ) in contacts" :key="index" v-if="contacts[index].visible == true" @click="apriChat(elem, index)">
+                        <img :src="contacts[index].avatar" alt="img" class="rounded-circle avatar-chat">          
+                        <div class="d-flex justify-content-between">
+                            <div class="d-flex flex-column ">
+                              <span class="ps-2 fw-semibold">{{ contacts[index].name }}</span>
+                              <span class="ms-2 font">{{ ultimoMex(index) }}</span>
+                            </div>
+                            <div class="m-auto">
+                              <span class="font">{{ ultimoMexOra(index) }}</span>
+                            </div>
+                        </div>  
+                    </li>
+                </ul>
+            </div>
+          </div>
+
+          <!-- MAIN -->
+          <div class="main">
+            <!-- SEZIONE PROFILO MAIN -->
+            <div class="profile color d-flex justify-content-between">
+                <div class="img my-auto d-flex">
+                    <div class="pic-2 ms-2">
+                        <img :src="contacts[indice].avatar" alt="img-1" class="rounded-circle">
+                    </div>
+                    <div class="img-text">
+                        <span class="fw-semibold ms-2">{{ contacts[indice].name }}</span>
+                        <span class="ms-2">Ultimo accesso oggi alle 12:00 </span>
+                    </div> 
+                </div>
+                <div class="icons my-auto me-2">
+                    <i class="fa-solid fa-magnifying-glass  fs-5 p-2 text-grey"></i>
+                    <i class="fa-solid fa-paperclip  fs-5 p-2 text-grey"></i>
+                    <i class="fa-solid fa-ellipsis-vertical fs-5 p-2 text-grey"></i>
+                </div>
+            </div>
+            <!-- SEZIONE MESSAGGI CHAT -->
+            <div class="main-mex p-3 d-flex flex-column">
+                <div v-for="(elem, index) in contacts[indice].messages" class="mb-2" :class="(contacts[indice].messages[index].status == 'sent') ? 'sent-mex' : 'received-mex'">
+                    <div class="d-flex flex-column" :class="(contacts[indice].messages[index].status == 'received') ? 'received-mex' : 'sent-mex'">
+                        <span class="messaggi"> {{ contacts[indice].messages[index].message }} </span>
+                        <span class="time">{{contacts[indice].messages[index].date.slice(10, 16)}}</span>
+                    </div>
+                </div>
+            </div>
+            <!-- SEZIONE SCRIVI MESSAGGIO -->
+            <div class="text-mex color ">
+                <nav class="navbar ">
+                    <div class="container-fluid">
+                      <div class="input-group">
+                        <span class="input-group-text" id="basic-addon1"><i class="fa-regular fa-face-smile p-2"></i></span>
+                        <input type="text" class="form-control border border-0 rounded-2" placeholder="Scrivi un messaggio" aria-label="Username" aria-describedby="basic-addon1" 
+                         v-model="inputMessage" @keyup.enter="sentMessage">
+                        <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-microphone p-2"></i></span>
+                      </div>
+                    </div>
+                  </nav>
+            </div>
+          </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>
