@@ -59,17 +59,17 @@
             <!-- CHAT -->
             <div class="chat">
                 <ul class="list-group">
-                    <li class="lista-chat list-group-item d-flex align-items-center cursor" v-for="( elem, index ) in contacts" :key="index" v-if="contacts[index].visible == true" @click="apriChat(elem, index)">
-                        <img :src="contacts[index].avatar" alt="img" class="rounded-circle avatar-chat">          
-                        <div class="d-flex justify-content-between">
-                            <div class="d-flex flex-column ">
+                    <li class="lista-chat list-group-item d-flex cursor justify-content-between" v-for="( elem, index ) in contacts" :key="index" v-if="contacts[index].visible == true" @click="apriChat(elem, index)">
+                        <div class="d-flex">                  
+                            <img :src="contacts[index].avatar" alt="img" class="rounded-circle avatar-chat">
+                            <div class="m-auto">
                               <span class="ps-2 fw-semibold">{{ contacts[index].name }}</span>
                               <span class="ms-2 font">{{ ultimoMex(index) }}</span>
                             </div>
-                            <div class="m-auto">
-                              <span class="font">{{ ultimoMexOra(index) }}</span>
-                            </div>
-                        </div>  
+                        </div>
+                        <div>
+                            <span class="font">{{ ultimoMexOra(index) }}</span>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -85,7 +85,7 @@
                     </div>
                     <div class="img-text">
                         <span class="fw-semibold ms-2">{{ contacts[indice].name }}</span>
-                        <span class="ms-2">Ultimo accesso oggi alle 12:00 </span>
+                        <span class="ms-2"> </span>
                     </div> 
                 </div>
                 <div class="icons my-auto me-2">

@@ -53,7 +53,7 @@ body {
 
 
 .attiva-notifiche{
-    height: 10%;
+    padding: 0.4rem 0;
     background-color: #8edafc;
 }
 
@@ -100,11 +100,15 @@ a{
 }
 
 .avatar-chat{
-    width: 50px;
+    width: 60px;
 }
 
 .list-group li:hover{
     background-color: rgb(177, 177, 177, 0.3);
+}
+
+.lista-chat span{
+    display: block;
 }
 
 /* MAIN / COONVERSAZIONI */
@@ -154,3 +158,24 @@ a{
     align-self: flex-end;
     color: grey;
 }
+
+::-webkit-scrollbar {
+    width: 3px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    border-radius: 5px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(182, 182, 182); 
+    border-radius: 5px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(125, 125, 125); 
+  }

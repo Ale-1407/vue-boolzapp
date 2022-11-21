@@ -176,7 +176,7 @@ var app = new Vue({
           let getMessages = this.contacts[this.indice].messages
           getMessages.push(
             {
-            date: '28/03/2020 16:15:22',
+            date: '28/03/2020 16:20:22',
             message: this.inputMessage,
             status: 'sent'
           }
@@ -187,7 +187,7 @@ var app = new Vue({
           let getMessages = this.contacts[this.indice].messages
           getMessages.push(
             {
-            date: '28/03/2020 16:15:22',
+            date: '28/03/2020 16:20:22',
             message: 'ok',
             status: 'received'
           }
